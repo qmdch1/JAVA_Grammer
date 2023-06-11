@@ -1,0 +1,25 @@
+Assert.notEmpty(user, "사용자 정보가 없습니다.");
+Assert.isTrue(user.getId() > 0);
+Assert.isTrue(user.getId() > 0, "사용자 정보가 존재하지 않습니다.", UserNotFoundException.class);
+
+- Optional 자료형
+	: 예상치 못한 Null 관련 예외를 회피할 수 있다. 
+	> 생성 : of(), ofNullable(value), empty() 메소드를 사용하여 Optional 객체를 생성한다. 
+	> 접근 : get(), orElse(T other), orElseGet()
+
+build.gradle
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+application.properties
+	spring.jpa.hibernate.ddl-auto=update
+	spring.datasource.driverClassName=org.mariadb.jdbc.Driver
+	spring.datasource.url=jdbc:mariadb://localhost:3306/castproserver
+	spring.datasource.username=root 
+	spring.datasource.password=root
+
+insert : save(entity 객체)
+select : findById(키 타입), getOne(키 타입)
+update : save(entity 객체)
+delete : deleteById(키 타입), delete(엔티티 객체)
+

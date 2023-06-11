@@ -1,0 +1,45 @@
+FileInputStream
+BufferedInputStream
+DataInputstream
+ByteArrayInputStream
+byte[] arr = new byte[1024];
+	위 3가지를 조합하여 파일을 다루는게 훨씬 속도가 빠르다.
+
+Deque - 자료구조 인터페이스
+	ArrayDeque
+	LinkedBlockingDeque
+	ConcurrentLinkedDeque
+	LinkedList
+
+list - 일반적인 리스트 인터페이스
+	ArrayList - index접근 검색빠름, 중간에 있는 데이터 삽입과 삭제가 많다면 비효율적
+	LinkedList - 순차적접근 검색느림, 중간에 있는 데이터 삽입과 삭제가 많으면 효율적
+
+Set - list형과 비슷하나, 중복값은 들어가지 않음
+	HashSet - 특별한 사유가 없다면 검색 성능이 좋은 HashSet을 사용
+	LinkedHashSet - 순서를 보장하고 싶다면 LinkedHashSet을 사용
+	TreeSet - 키값을 일정하게 iterate 하고자한다면 TreeSet을 사용
+	
+Map - key, value로 들어가는 자료형
+	HashMap - 특별한 사유가 없다면 검색 성능이 좋은 HashMap을 사용
+	LinkedHashMap - 순서를 보장하고 싶다면 LinkedHashMap을 사용
+	TreeMap - 키값을 일정하게 iterate 하고자한다면 TreeMap을 사용
+	
+StringBuffer
+	동기화 키워드를 지원하며, 멀티쓰레드 환경에서 안전하다.
+	setCharAt(n, 'c'); n위치 데이터를 c로 수정
+	
+StringBuilder
+	동기화를 지원하지 않기 때문에 멀티쓰레드 환경에서 사용하는 것은 적합하지 않지만, 단일쓰레드에서의 성능은 StringBuffer보다 더 좋다.
+	
+HTTP 통신
+	Stream : 데이터가 연속적으로 존재한다는 것을 표현한 객체, byte로 데이터가 전달된다.
+	InputStream : byte의 int형의 아스키코드로 값을 저장한다.
+		InputStream in = System.in;
+	InputStreamReader : byte대신 char형태로 읽을수 있다. 따라서 아스키코드가 아닌 문자열로 출력이 가능하며 String객체로 변환도 된다.
+		InputStreamReader reader = new InputStreamReader(InputStream);
+	BufferdReader : Stream이 한계치라 null이 반환되기 전까지 모든 값을 저장함
+		BufferdReader r = new BufferdReader(InputStreamReader);
+		
+	
+		
